@@ -1,0 +1,9 @@
+db.client_master.insertMany([
+    {cno:"C00001",name:"Ivan",city:"Bombay",pincode:400054,state:"Maharashtra",baldue:15000},
+    {cno:"C00002",name:"Vandana",city:"Madras",pincode:780001,state:"Tamilnadu",baldue:10000},
+    {cno:"C00003",name:"Pramada",city:"Bombay",pincode:400057,state:"Maharashtra",baldue:5000},
+    {cno:"C00004",name:"Basu",city:"Bombay",pincode:400056,state:"Maharashtra",baldue:8000},
+    {cno:"C00005",name:"Ravi",city:"Delhi",pincode:100001,state:"Maharashtra",baldue:2000},
+    {cno:"C00006",name:"Rukmini",city:"Bombay",pincode:400050,state:"Maharashtra",baldue:12000},
+    {cno:"C00007",name:"kaushik",city:"surat",pincode:394185,state:"Gujarat",baldue:12000},
+])

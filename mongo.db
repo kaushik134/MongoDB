@@ -1,0 +1,84 @@
+1. show database
+    test> show dbs
+    admin   40.00 KiB
+    config  12.00 KiB
+    local   72.00 KiB
+
+
+2. create databases
+    test> use newskill
+    switched to db newskill
+
+
+3. create collection database
+    newskill> db.createCollection("stud")
+    { ok: 1 }
+
+
+4. show collection
+    newskill> show collections
+    stud
+
+
+5. insert one record
+    newskill> db.stud.insertOne({sno:111,sname:"kaushik",fees:37500,course:"Node"})
+    {
+    acknowledged: true,
+    insertedId: ObjectId("639c5d61ccde64f854dbc00f")
+    }
+
+
+6. show collection 
+    syntax: 
+            db.collection.find()
+
+    newskill> db.stud.find()
+    [
+        {
+            _id: ObjectId("639c5d61ccde64f854dbc00f"),
+            sno: 111,
+            sname: 'kaushik',
+            fees: 37500,
+            course: 'Node'
+        },
+        {
+            _id: ObjectId("639c5da0ccde64f854dbc010"),
+            sno: 112,
+            sname: 'dhruvik',
+            fees: 45000,
+            course: 'FullStack'
+        },
+        {
+            _id: ObjectId("639c5dcdccde64f854dbc011"),
+            sno: 113,
+            sname: 'bhautik',
+            fees: 65000,
+            course: 'Django'
+        }
+    ]
+
+
+7. insert many
+    db.stud.insertMany([
+        {sno:115,sname:"het",fees:37500,course:"Bcom"},
+        {sno:116,sname:"vaidehi",fees:37500,course:"BBA"},
+        {sno:117,sname:"tuntun",fees:37500,course:"arts"},
+        {sno:118,sname:"prinsi",fees:37500,course:"Bcom"},
+        ])
+
+        newskill> db.stud.insertMany([
+    ...         {sno:115,sname:"het",fees:37500,course:"Bcom"},
+    ...         {sno:116,sname:"vaidehi",fees:37500,course:"BBA"},
+    ...         {sno:117,sname:"tuntun",fees:37500,course:"arts"},
+    ...         {sno:118,sname:"prinsi",fees:37500,course:"Bcom"},
+    ...         ])
+    {
+    acknowledged: true,
+    insertedIds: {
+        '0': ObjectId("639c608accde64f854dbc013"),
+        '1': ObjectId("639c608accde64f854dbc014"),
+        '2': ObjectId("639c608accde64f854dbc015"),
+        '3': ObjectId("639c608accde64f854dbc016")
+    }
+    }
+
