@@ -92,3 +92,11 @@
 
 // limit 
     db.client_master.find({"city":"Bombay"}).limit(2)
+
+
+// drop
+    db.client_master.drop()
+
+
+// drop databases
+    db.dropDatabase()
