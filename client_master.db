@@ -86,8 +86,8 @@
 
 
 // particular many column
-    client> db.client_master.find({},{"name":1},{"city":1},{"state":1})
-    client> db.client_master.find({},{"name":1,"city":1,"state":1,"_id":0})
+    client> db.client_master.find({},{"name":1},{"city":1},{"state":1}) // with ObjectId
+    client> db.client_master.find({},{"name":1,"city":1,"state":1,"_id":0}) // without ObjectId
 
 
 // limit 
