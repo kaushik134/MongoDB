@@ -1,0 +1,10 @@
+3. 
+a). db.client_master.find({},{"name":1})
+b). db.client_master.find({})
+c). db.client_master.find({},{"name":1,"city":1,"state":1})
+d). db.product_master.find({})
+e). db.client_master.find({"city":{$in:["Bombay"]}})
+f). db.salesman_master.find({"salamt":{$eq:3000}})
+
+
+4. 

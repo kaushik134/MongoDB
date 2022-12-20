@@ -1,9 +1,94 @@
-db.client_master.insertMany([
-    {cno:"C00001",name:"Ivan",city:"Bombay",pincode:400054,state:"Maharashtra",baldue:15000},
-    {cno:"C00002",name:"Vandana",city:"Madras",pincode:780001,state:"Tamilnadu",baldue:10000},
-    {cno:"C00003",name:"Pramada",city:"Bombay",pincode:400057,state:"Maharashtra",baldue:5000},
-    {cno:"C00004",name:"Basu",city:"Bombay",pincode:400056,state:"Maharashtra",baldue:8000},
-    {cno:"C00005",name:"Ravi",city:"Delhi",pincode:100001,state:"Maharashtra",baldue:2000},
-    {cno:"C00006",name:"Rukmini",city:"Bombay",pincode:400050,state:"Maharashtra",baldue:12000},
-    {cno:"C00007",name:"kaushik",city:"surat",pincode:394185,state:"Gujarat",baldue:12000},
-])
+// Insert records
+    db.client_master.insertMany([
+        {cno:"C00001",name:"Ivan",city:"Bombay",pincode:400054,state:"Maharashtra",baldue:15000},
+        {cno:"C00002",name:"Vandana",city:"Madras",pincode:780001,state:"Tamilnadu",baldue:10000},
+        {cno:"C00003",name:"Pramada",city:"Bombay",pincode:400057,state:"Maharashtra",baldue:5000},
+        {cno:"C00004",name:"Basu",city:"Bombay",pincode:400056,state:"Maharashtra",baldue:8000},
+        {cno:"C00005",name:"Ravi",city:"Delhi",pincode:100001,state:"Maharashtra",baldue:2000},
+        {cno:"C00006",name:"Rukmini",city:"Bombay",pincode:400050,state:"Maharashtra",baldue:12000},
+        {cno:"C00007",name:"kaushik",city:"surat",pincode:394185,state:"Gujarat",baldue:12000},
+    ])
+
+
+// show collection
+    client> db.client_master.find();
+
+
+// Skip collection
+    client> db.client_master.find({}).skip(3);
+
+
+// Assecnding sorting
+    client> db.client_master.find({}).sort({"name":1});
+
+
+// dissecnding sorting
+    client> db.client_master.find({}).sort({"name":-1});
+
+
+// Count
+    client> db.client_master.find({}).count();
+    7   _id: ObjectId("639c65d859f935ed97061d85"),
+
+
+// particular find 
+    key : value (pair)
+    client> db.client_master.find({"name":"Basu"})
+
+
+// $eq (equal to)
+    client> db.client_master.find({"baldue":{$eq:8000}})
+    
+
+// $ne (not equal to)
+    client> db.client_master.find({"baldue":{$ne:8000}})
+    
+
+// $gt (gretter than)
+    client> db.client_master.find({"baldue":{$gt:12000}})
+    
+
+// $gte (gretter than equal to)
+    client> db.client_master.find({"baldue":{$gte:12000}})
+    
+
+// $lt (less than)
+    client> db.client_master.find({"baldue":{$lt:12000}})
+    
+
+// $lte (less than equal to)
+    client> db.client_master.find({"baldue":{$lte:12000}})
+    
+
+// $in (in)
+    client> db.client_master.find({"baldue":{$in:[8000,12000]}})
+    
+
+// $nin (not in)
+    client> db.client_master.find({"baldue":{$nin:[8000,12000]}})
+    
+// $or
+    client> db.client_master.find({$or:[{"name":"kaushik"},{"baldue":10000}]})
+    client> db.client_master.find({$or:[{"state":{$in:["Maharashtra"]}},{"baldue":{$ne:0}}]})
+    
+
+// $and
+    client> db.client_master.find({$and:[{"name":"kaushik"},{"baldue":12000}]})
+    client> db.client_master.find({$and:[{"state":{$in:["Maharashtra"]}},{"baldue":{$ne:0}}]})
+
+// $not
+    client> db.client_master.find({"baldue":{$not:{$gt:12000}}})
+
+
+// particular column
+    client> db.client_master.find({},{"name":1}) // with ObjectId
+    client> db.client_master.find({},{"name":1,"_id":0}) // without ObjectId
+
+
+// particular many column
+    client> db.client_master.find({},{"name":1},{"city":1},{"state":1})
+    client> db.client_master.find({},{"name":1,"city":1,"state":1,"_id":0})
+
+
+// limit 
+    db.client_master.find({"city":"Bombay"}).limit(2)
