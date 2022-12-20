@@ -100,3 +100,19 @@
 
 // drop databases
     db.dropDatabase()
+
+
+// remove collection records
+    node_5> db.client_master.remove({})
+    { acknowledged: true, deletedCount: 7 }
+
+
+// remove particular records 
+    node_5> db.product_master.remove({qtyonhand:{$eq:10}})
+    { acknowledged: true, deletedCount: 5 }
+
+
+// update
+    db.client_master.update({"name":"kaushik"},{$set:{"name":"avis"}})
+    db.client_master.update({"name":"avis"},{$set:{"age":18}}) // new modified field
+     db.client_master.updateMany({},{$set:{"age":18}}) // update many
