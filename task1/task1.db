@@ -8,3 +8,7 @@ f). db.salesman_master.find({"salamt":{$eq:3000}})
 
 
 4. 
+a). db.client_master.update({"cno":"C00005"},{$set:{"city":"bangalore"}})
+b). db.client_master.update({"cno":"C00001"},{$set:{"baldue":"1000"}})
+c). db.product_master.update({"pname":"1.44 Drive"},{$set:{"costprice":950}})
+d). db.salesman_master.updateMany({},{$set:{"city":"pune"}})
