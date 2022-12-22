@@ -54,6 +54,7 @@ Q13) Select all documents where the no_of_reviews is greater than or equals to 3
 Q14) update no_of_reviews to 10 where isbn no is 6677
     db.books.update({'isbn':6677},{$set:{'no_of_reviews':10}})
 
+
 Q15) update profile to 8 of books Oracle in simple way
     db.books.update({'title':'Oracle in simple way'},{$set:{'author.profile.books':8}})
 
