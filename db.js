@@ -5,6 +5,7 @@
 // node_5> load('db.js')
 // true
 
+// output only true or false
 
 db.client_master.insertMany([
     {cno:"C00001",name:"Ivan",city:"Bombay",pincode:400054,state:"Maharashtra",baldue:15000},
