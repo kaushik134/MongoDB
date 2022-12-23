@@ -120,5 +120,23 @@
         "books": 2
       }
     }
+  },
+  {
+    "title": "MongoDB in simple not way",
+    "isbn": "6677",
+    "downloadable": true,
+
+    "no_of_reviews": 4,
+    "tags": ["database", "cloud", "nosql"],
+    "languages": ["english", "hindi", "gujarati"],
+    "author": {
+      "name": "Sachin Tendulkar",
+      "callname": "Sachin",
+      "profile": {
+        "exp": 6,
+        "courses": 7,
+        "books": 8
+      }
+    }
   }
 ]

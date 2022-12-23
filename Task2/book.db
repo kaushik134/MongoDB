@@ -1,0 +1,5 @@
+1. BSON type record
+    db.books.find({isbn:{$type:"string"}})
+
+
+2. 
